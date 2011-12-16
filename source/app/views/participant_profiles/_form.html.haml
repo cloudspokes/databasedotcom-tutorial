@@ -1,0 +1,35 @@
+= form_for(@participant_profile, :url => "/participants/#{@participant['Id']}/participant_profiles/#{@participant_profile['Id']}", :action => @operation, :html => {:class => "nifty_form"}) do |form|
+  - ParticipantProfile__c.attributes.select {|a| ParticipantProfile__c.updateable?(a)}.each do |attr|
+    %field
+      / double between Owner and OwnerId
+    - unless attr == 'Owner'
+      = form.label attr, ParticipantProfile__c.label_for(attr)
+      - case ParticipantProfile__c.field_type(attr)
+      - when "date"
+        / todo, it generates participant__c[Date_of_Birth__c(1i)]  (2i)  (3i)
+        = form.text_field attr, :class => "datepicker", :value => @participant[attr]
+      - when "boolean"
+        = form.check_box attr
+      - when "multipicklist"
+      - when "picklist"
+        - puts "Rendering picklist for #{attr}, value is #{@participant[attr]}, type is #{ParticipantProfile__c.field_type(attr)}"
+        = form.select attr, ParticipantProfile__c.picklist_values(attr).collect {|p| [p["label"], p["value"]]}, :multiple => (ParticipantProfile__c.field_type(attr) == "multipicklist")
+      - when 'reference'
+        - unless @participant[attr].nil? || @participant[attr].empty?
+          = @participant[attr]
+        - else
+          / skipping OwnerId  / Owner
+      - when 'email'
+        / email is an unique field, update does not really work well here.
+        - if !@participant.persisted?
+          = form.email_field attr
+        - else
+          / TODO not updating this unique field
+          = @participant[attr]
+      - else
+        = form.text_field attr
+    %br/
+  - if @participant_profile.persisted?
+    = form.submit 'Update Participant'
+  - else
+    = form.submit 'Create Participant'

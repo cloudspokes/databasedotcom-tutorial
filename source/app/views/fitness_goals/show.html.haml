@@ -1,0 +1,8 @@
+- @fitness_goal.attributes.keys.each do |key|
+  / doubled Owner and OwnerId
+  - unless key == 'Owner'
+    %p
+      %b= key.underscore.humanize
+      = @fitness_goal.attributes[key]
+/ <haml:loud> link_to 'Edit', edit_participant_fitness_goal_path(@participant['Id'], @fitness_goal['Id']) </haml:loud> |
+= link_to 'Back', participant_fitness_goals_path

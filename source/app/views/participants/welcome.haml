@@ -1,0 +1,9 @@
+%h1 Welcome to Fitness Tracker
+If you are new user, entering your e-mail address will create a new account for you.
+If you are an existing user, entering your e-mail will retrieve your existing profile.
+
+= form_for(@participant, :url => find_participants_path, :method => "#{@operation}", :html => {:class => "nifty_form"}) do |form|
+  = form.label "Email__c", Participant__c.label_for("Email__c")
+  = form.email_field "Email__c"
+  %br/
+  = form.submit :value => "Start here"

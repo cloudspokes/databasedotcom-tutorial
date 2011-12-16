@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  BFI: 9.99
+  BFM: 9.99
+  BMI: 9.99
+  BMR: 9.99
+  Checkpoint: MyString
+  F1: 9.99
+  F2: 9.99
+  Height: 1
+  Hip: 1
+  LBM: 1
+  Name: MyString
+  Neck: 1
+  participant_id: 1
+  RecordDate: 2011-12-01
+  Waist: 1
+  Weight: 1
+
+two:
+  BFI: 9.99
+  BFM: 9.99
+  BMI: 9.99
+  BMR: 9.99
+  Checkpoint: MyString
+  F1: 9.99
+  F2: 9.99
+  Height: 1
+  Hip: 1
+  LBM: 1
+  Name: MyString
+  Neck: 1
+  participant_id: 1
+  RecordDate: 2011-12-01
+  Waist: 1
+  Weight: 1

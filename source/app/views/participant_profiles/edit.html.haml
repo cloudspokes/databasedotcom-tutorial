@@ -1,0 +1,5 @@
+%h1 Editing participant_profile
+= render 'form'
+= link_to 'Show', participant_participant_profile_path(@participant['Id'], @participant_profile['Id'])
+|
+\#{link_to 'Back', participant_participant_profiles_path}

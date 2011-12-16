@@ -1,0 +1,24 @@
+Databasedotcom Ruby Gem Tutorial
+
+URL: http://www.cloudspokes.com/challenge_detail.html?contestID=356
+Blog: http://blog.cloudspokes.com
+Challenge end date: 12/7/2011 11:00 PM
+Winner: raygao http://www.cloudspokes.com/profile.html?username=raygao
+
+Video: http://www.youtube.com/watch?v=1_5RSKGHvAA
+
+Description
+===========
+The new Ruby Gem for Database.com was released at Dreamforce last fall with much fanfare.  The gem is a Ruby wrapper for the Salesforce REST APIs and it covers both the Sobject API and the Chatter API. Salesforce-based OAuth is baked into the gem, so your data is secure and access privileges are controlled by the org.
+
+The new gem is great but it’s so new that there’s not much documentation or sample code for it right now. This makes it hard for Force.com developers to get started using Ruby. We’d like to remedy this.
+
+Your challenge is to develop a sample app using the gem to demonstrate as much functionality as possible. Some documentation wouldn’t hurt as well.
+
+The results of this challenge will be open-sourced for the world to use.
+
+Requirements
+============
+Use a free salesforce.com Developer org to build a sample app using the databasedotcom gem. The gem is available here along with a sister gem specifically for Rails applications. We’d prefer a Rails app but feel free to use either Rails or Sinatra.  Host your application on Heroku or Cloud Foundry for the world to see.
+
+Include as much functionality from the gem as possible but we’d like to see a lot of sample code with the Sobject class and the Client class (specifically querying and finding records as well as updating and upserting them) and Chatter.

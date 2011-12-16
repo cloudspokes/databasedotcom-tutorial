@@ -1,0 +1,22 @@
+%h1 Listing participants
+- unless @participants.empty?
+  %table
+    %tr
+      - @participants[0].attributes.keys.each do |key|
+        %th{:align => "left"}= key.underscore.humanize
+      %th
+      %th
+      %th
+    - @participants.each do |participant|
+      %tr
+        - participant.attributes.keys.each do |key|
+          %td
+            = participant.attributes[key]
+        %td= link_to 'Show', participant_path(participant)
+        / TODO wait until gem fix for unique entry
+        / <td><haml:loud> link_to 'Edit', edit_participant_path(participant) </haml:loud></td>
+        %td= link_to 'Destroy', participant_path(participant), confirm: 'Are you sure?', method: :delete
+- else
+  everything is empty
+%br/
+= link_to 'New Participant', new_participant_path

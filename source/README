@@ -1,0 +1,15 @@
+== How to add Jquery UI datepicker.
+see http://railscasts.com/episodes/213-calendars
+
+=== step 1
+/app/views/layouts/application.html.haml
+    %link{:href => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/themes/ui-lightness/jquery-ui.css", :rel => "stylesheet", :type => "text/css"}
+    %script{:src => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/jquery-ui.min.js"}
+=== step 2
+/app/views/<class_view>/_form.html.haml
+    = form.text_field attr, :class => "datepicker", :value => @participant[attr]
+=== step 3
+/app/assets/javascripts/application.js
+    $(function() {
+        $(".datepicker").datepicker();
+    });

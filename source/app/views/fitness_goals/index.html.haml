@@ -1,0 +1,24 @@
+%h1 Listing fitness_goals
+- unless @fitness_goals.empty?
+  %table
+    %tr
+      - @fitness_goals[0].attributes.keys.each do |key|
+        %th{:align => "left"}= key.underscore.humanize
+      %th
+      %th
+      %th
+    - @fitness_goals.each do |fitness_goal|
+      %tr
+        - fitness_goal.attributes.keys.each do |key|
+          %td
+            = fitness_goal.attributes[key]
+        %td= link_to 'Show', participant_fitness_goal_path(@participant ,fitness_goal)
+        / TODO wait until gem fix for unique entry
+        / <td><haml:loud> link_to 'Edit', edit_participant_fitness_goal_path(@participant, fitness_goal) </haml:loud></td>
+        %td= link_to 'Destroy', participant_fitness_goal_path(@participant, fitness_goal), confirm: 'Are you sure?', method: :delete
+- else
+  You have no outstanding Fitness Goal.
+%br/
+= link_to 'New Fitness goal', new_participant_fitness_goal_path
+|
+\#{link_to 'Go back to Participant', participant_path(@participant)}

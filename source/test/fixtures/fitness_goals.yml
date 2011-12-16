@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  BFI: 9.99
+  BMI: 9.99
+  Name: MyString
+  participant_id: 1
+  Weight: 9.99
+
+two:
+  BFI: 9.99
+  BMI: 9.99
+  Name: MyString
+  participant_id: 1
+  Weight: 9.99

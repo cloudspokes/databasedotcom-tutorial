@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  First_Name: MyString
+  Last_Name: MyString
+  Gender: MyString
+  Age: 1
+  Date_of_Birth: 2011-12-01
+  Email: MyText
+  ExpectedEndDate: 2011-12-01
+  ProgramStartDate: 2011-12-01
+
+two:
+  First_Name: MyString
+  Last_Name: MyString
+  Gender: MyString
+  Age: 1
+  Date_of_Birth: 2011-12-01
+  Email: MyText
+  ExpectedEndDate: 2011-12-01
+  ProgramStartDate: 2011-12-01

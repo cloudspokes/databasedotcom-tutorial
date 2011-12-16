@@ -1,0 +1,5 @@
+%h1 Editing fitness_goal
+= render 'form'
+= link_to 'Show', participant_fitness_goal_path(@participant['Id'], @fitness_goal['Id'])
+|
+\#{link_to 'Back', participant_fitness_goals_path}

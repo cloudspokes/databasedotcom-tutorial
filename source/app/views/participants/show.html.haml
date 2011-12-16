@@ -1,0 +1,13 @@
+- @participant.attributes.keys.each do |key|
+  / doubled Owner and OwnerId
+  - unless key == 'Owner'
+    %p
+      %b= key.underscore.humanize
+      = @participant.attributes[key]
+/ TODO wait until gem fix for unique entry
+/ <haml:loud> link_to 'Edit', edit_participant_path(@participant) </haml:loud> |
+= link_to 'Back', participants_path
+|
+\#{link_to 'Show My Fitness Goals', participant_fitness_goals_path(@participant)}
+|
+\#{link_to 'Show My Participant Profiles', participant_participant_profiles_path(@participant)}

@@ -1,0 +1,24 @@
+%h1 Listing participant_profiles
+- unless @participant_profiles.empty?
+  %table
+    %tr
+      - @participant_profiles[0].attributes.keys.each do |key|
+        %th{:align => "left"}= key.underscore.humanize
+      %th
+      %th
+      %th
+    - @participant_profiles.each do |participant_profile|
+      %tr
+        - participant_profile.attributes.keys.each do |key|
+          %td
+            = participant_profile.attributes[key]
+        %td= link_to 'Show', participant_participant_profile_path(@participant ,participant_profile)
+        / TODO wait until gem fix for unique entry
+        / <td><haml:loud> link_to 'Edit', edit_participant_participant_profile_path(@participant, participant_profile) </haml:loud></td>
+        %td= link_to 'Destroy', participant_participant_profile_path(@participant, participant_profile), confirm: 'Are you sure?', method: :delete
+- else
+  You have no outstanding Profile.
+%br/
+= link_to 'New Participant profile', new_participant_participant_profile_path
+|
+\#{link_to 'Go back to Participant', participant_path(@participant)}
